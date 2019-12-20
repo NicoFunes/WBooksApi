@@ -1,10 +1,10 @@
-version: 2.5.7
+version: 2
 jobs:
   build:
     working_directory: ~/rails-training
 
     docker:
-      - image: circleci/ruby:2.5-stretch-node
+      - image: circleci/ruby:2.5.7-stretch-node
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
