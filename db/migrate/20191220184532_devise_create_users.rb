@@ -30,7 +30,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
-      # t.datetime :locked_at
+      # t.datetime :locke     Failure/Error: should validate_presence_of(:first_name)d_at
 
       ## Extra
       t.string :first_name
