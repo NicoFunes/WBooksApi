@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'support/factory_bot'
 
 # DO NOT Add additional requires below this line. Rails is not loaded until this point!
 # INSTEAD...put requires in dedicated files in spec/support so that folks browsing this
