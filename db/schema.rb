@@ -22,9 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_13_182343) do
     t.string "genre", default: "", null: false
     t.string "publisher", default: "", null: false
     t.string "year", default: "", null: false
-    t.bigint "rent_id"
     t.integer "quantity"
-    t.index ["rent_id"], name: "index_books_on_rent_id"
   end
 
   create_table "models", force: :cascade do |t|
@@ -58,14 +56,10 @@ ActiveRecord::Schema.define(version: 2020_01_13_182343) do
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "rent_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["rent_id"], name: "index_users_on_rent_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "books", "rents"
   add_foreign_key "rents", "books"
   add_foreign_key "rents", "users"
-  add_foreign_key "users", "rents"
 end
