@@ -2,17 +2,13 @@ require 'rails_helper'
 require 'pp'
 
 describe Book, type: :model do
-  it do
-    should validate_presence_of(:title)
-  end
+  it { should validate_presence_of(:title) }
 
   subject(:book) do
     create(:book)
   end
 
-  it do
-    is_expected.to be_valid
-  end
+  it { is_expected.to be_valid }
 
   describe '#create' do
     context 'When the title is nil' do
