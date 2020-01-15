@@ -9,7 +9,5 @@ describe User, type: :model do
     create(:user)
   end
 
-  it do
-    is_expected.to be_valid
-  end
+  it { is_expected.to be_valid }
 end

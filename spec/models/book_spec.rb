@@ -16,27 +16,19 @@ describe Book, type: :model do
 
   describe '#create' do
     context 'When the title is nil' do
-      it do
-        expect(build(:book, title: nil)).to be_invalid
-      end
+      it { expect(build(:book, title: nil)).to be_invalid }
     end
 
     context 'When the author is nil' do
-      it do
-        expect(build(:book, author: nil)).to be_invalid
-      end
+      it { expect(build(:book, author: nil)).to be_invalid }
     end
 
     context 'when the year is over the allowed range' do
-      it do
-        expect(build(:book, year: 2900)).to be_invalid
-      end
+      it { expect(build(:book, year: 2900)).to be_invalid }
     end
 
     context 'when the year is under the allowed range' do
-      it do
-        expect(build(:book, year: 1500)).to be_invalid
-      end
+      it { expect(build(:book, year: 1500)).to be_invalid }
     end
   end
 end
