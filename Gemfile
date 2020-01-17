@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop', '~> 0.77.0'
   gem 'shoulda-matchers'
+  gem 'kaminari'
 end
 
 group :development do

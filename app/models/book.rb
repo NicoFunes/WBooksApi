@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   validates_presence_of :title, :author
+  validates :title, uniqueness: true, on: :create
   validate :check_year_in_range
   has_many :rents
 
