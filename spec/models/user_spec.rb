@@ -10,4 +10,14 @@ describe User, type: :model do
   end
 
   it { is_expected.to be_valid }
+
+  describe '#create' do
+    context 'When the email is nil' do
+      it { expect(build(:user, email: nil)).to be_invalid }
+    end
+
+    context 'when the email already exist in the database'
+    let!(:user1) { create :user, email: 'esteemailyaexiste@widergy.com' }
+    it { expect(build(:user, email: 'esteemailyaexiste@widergy.com')).to be_invalid }
+  end
 end
