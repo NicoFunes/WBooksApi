@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 describe Rent, type: :model do
-  it do
-    should validate_presence_of(:book)
-  end
+  it { should validate_presence_of(:book) }
 
   describe '#create' do
     context 'When the to date is before the from date' do
