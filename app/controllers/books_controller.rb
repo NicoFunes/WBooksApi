@@ -14,9 +14,6 @@ class BooksController < ApplicationController
   end
 
   def find_book_with_id
-    abook = Book.find_by(id: params[:id])
-    return abook if abook.present?
-
-    nil
+    Book.find_by(id: params[:id])
   end
 end
