@@ -4,11 +4,9 @@ class BooksController < ApplicationController
   before_action :authorize_request
 
   def show
-    if !(@abook = Book.find_by(id: params[:id])).nil?
-      render :show, status: 200
-    else
-      render :error_book_not_found, status: 404
-    end
+    return render :book_show, status: :ok if (@abook = Book.find_by(id: params[:id])).present?
+
+    render :error_book_not_found, status: :not_found
   end
 
   def index
